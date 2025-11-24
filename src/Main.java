@@ -106,3 +106,4 @@ public class Main {
         System.out.println("Месяц номер " + monthNumber + " принадлежит к сезону " + season + ".");
     }
 }
+
