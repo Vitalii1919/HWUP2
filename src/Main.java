@@ -6,7 +6,7 @@ public class Main {
         // to see how IntelliJ IDEA suggests fixing it.
         System.out.printf("Hello and welcome!");
 
-        for (int i = 1; i <= 5; i++) {
+        for (int i = 1; i <= 1; i++) {
             //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
             // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
             System.out.println("i = " + i);
@@ -26,41 +26,24 @@ public class Main {
 
             int clientDeviceYear = 2014;
             clientOS = 1;
-            if (clientDeviceYear < 2015) {
-                if (clientOS == 0) {
-                    System.out.println("Установите облегченную версию приложения для iOS по ссылке.");
-                } else if (clientOS == 1) {
-                    System.out.println("Установите облегчённую версию приложения для Android по ссылке.");
-                }
-            } else {
-                if (clientOS == 0) {
-                    System.out.println("Установите версию приложения для iOS по ссылке.");
-                } else if (clientOS == 1) {
-                    System.out.println("Установите версию приложения для Android по ссылке.");
-                }
+            if (clientDeviceYear < 2015 && clientOS == 0) {
+                System.out.println("Установите облегченную версию приложения для iOS по ссылке.");
+            } else if (clientDeviceYear < 2015 && clientOS == 1) {
+                System.out.println("Установите облегчённую версию приложения для Android по ссылке.");
+            } else if (clientOS == 0) {
+                System.out.println("Установите версию приложения для iOS по ссылке.");
+            } else if (clientOS == 1) {
+                System.out.println("Установите версию приложения для Android по ссылке.");
+
             }
         }
         int year = 2021;
-        boolean leap = false;
-        if (year % 4 == 0) {
-            if (year % 100 == 0) {
-                if (year % 400 == 0) {
-                    leap = true;
-                } else {
-                    leap = false;
-                }
-            } else {
-                leap = true;
-            }
-        } else {
-            leap = false;
-        }
-        if (leap) {
+
+        if (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)) {
             System.out.println("Этот год високосный");
         } else {
             System.out.println("Этот год не високосный");
-            {
-            }
+
             int deliveryDistance = 95;
             int deliveryDays;
             if (deliveryDistance <= 20) {
@@ -74,6 +57,7 @@ public class Main {
                 return;
             }
             System.out.println("Потребуется дней: " + deliveryDays);
+
             int monthNumber = 12;
             String season;
             switch (monthNumber) {
@@ -101,10 +85,7 @@ public class Main {
                     season = "неизвестно";
                     break;
             }
-
             System.out.println("Месяц номер " + monthNumber + " принадлежит к сезону " + season + ".");
         }
     }
 }
-
-
